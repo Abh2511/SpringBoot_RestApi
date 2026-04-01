@@ -1,0 +1,22 @@
+package com.abhirat.rest;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.MediaType;
+
+import com.abhirat.binding.Product;
+
+@RestController
+public class ProductRestController {
+
+	@GetMapping(value="/product" ,produces = MediaType.APPLICATION_XML_VALUE)
+	public ResponseEntity<Product> getProduct()
+	{
+		Product p1 = new Product(100,"Abhirat",1000.0);
+         		
+		return new ResponseEntity<>(p1, HttpStatus.OK);
+	}
+	
+}

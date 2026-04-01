@@ -1,0 +1,19 @@
+package com.abhirat.rest;
+
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.abhirat.binding.Student;
+
+import org.springframework.http.MediaType;
+
+public class StudentController 
+{
+	
+	@GetMapping(value = "/student", produces = MediaType.APPLICATION_XML_VALUE)
+    public Student getStudent() 
+	{
+        return new Student(101, "Abhirat", "Java");
+        
+    }
+
+}

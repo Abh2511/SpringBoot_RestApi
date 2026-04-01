@@ -1,0 +1,42 @@
+package com.abhirat.Controller;
+
+import java.security.PublicKey;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+
+@RestController
+public class UserController {
+//	
+//	@GetMapping("/hello")
+//	public String hello()
+//	{
+//		return "Hello Abhirat Bawane Welcome to the Pulgaon";
+//	}
+//	
+//	@PostMapping("/welcome")
+//	public String welocome()
+//	{
+//		return "Welcome to Dubai Lots of Love";
+//	}
+	
+	// Query Parameter
+	    @GetMapping("/search")
+		public String search(@RequestParam String name)
+		{
+			return "Searching for :" +name;
+		}
+	    
+	    @GetMapping("/user/{id}")
+	    public String getUser(@PathVariable int id)
+	    {
+	    	return "User Id : " +id;
+	    	
+	    }
+	
+
+}

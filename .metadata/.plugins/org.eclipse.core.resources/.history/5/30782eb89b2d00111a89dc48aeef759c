@@ -1,0 +1,30 @@
+package com.abhirat.service;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+@Service
+public class ProductService {	
+	
+	
+	public void getQuotations() {
+		
+		String apiUrl = " https://type.fit/api/quotes ";
+		
+		RestTemplate rt = new RestTemplate();
+		
+		ResponseEntity<String> resEntity = 
+				rt.getForEntity(apiUrl, String.class);
+		
+		int value = resEntity.getStatusCode().value();
+	    
+		if(value==200)
+		{
+			String body = resEntity.getBody();
+			System.out.println(body);
+		}
+		
+	}
+
+}

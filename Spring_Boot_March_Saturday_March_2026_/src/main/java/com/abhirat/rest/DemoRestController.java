@@ -1,0 +1,33 @@
+package com.abhirat.rest;
+
+import java.time.LocalDate;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class DemoRestController {
+
+	
+	@PostMapping("/date")
+	 public String getDate()
+	 {
+		 LocalDate now = LocalDate.now();
+		 return String.valueOf(now);
+	 }
+	@GetMapping("/greet")
+	public String getGretMsg()
+	{
+		String msg  = "Good Morning ";
+		return msg;
+	}
+	
+	@GetMapping("/welcome")
+	public String getWelcomeMsg()
+	{
+		String msg = "Welcome to The World of the API";
+		return msg;
+	}
+	
+}

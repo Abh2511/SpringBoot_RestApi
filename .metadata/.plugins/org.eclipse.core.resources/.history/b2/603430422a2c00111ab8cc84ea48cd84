@@ -1,0 +1,2 @@
+spring.application.name=SpringBoot_30_March_MyGptAssignement3
+server.port=8085

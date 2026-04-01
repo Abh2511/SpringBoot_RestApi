@@ -1,0 +1,39 @@
+package com.abhirat.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.abhirat.service.ProductService;
+
+import ch.qos.logback.core.model.Model;
+
+@Controller
+public class ProductController 
+{
+	@Autowired
+	private ProductService service;
+	
+	@GetMapping("/product/{pid}")
+	public String getProduct(@PathVariable("pid") String pid, Model model)
+	{
+		
+	  Product product =	service.getProduct(pid);
+	  
+	  model.addAttribute("product")
+	   
+		return "index";
+	}
+	
+	@GetMapping("/")
+	public String index(Model model)
+	{
+		service.getProducts();
+		
+		return "index";
+	}
+	
+
+}

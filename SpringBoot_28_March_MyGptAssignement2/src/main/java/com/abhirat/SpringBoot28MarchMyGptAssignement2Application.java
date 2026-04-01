@@ -1,0 +1,13 @@
+package com.abhirat;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringBoot28MarchMyGptAssignement2Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringBoot28MarchMyGptAssignement2Application.class, args);
+	}
+
+}

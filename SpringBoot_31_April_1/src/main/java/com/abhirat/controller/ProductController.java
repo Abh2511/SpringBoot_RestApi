@@ -1,0 +1,26 @@
+package com.abhirat.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.abhirat.service.ProductService;
+
+import ch.qos.logback.core.model.Model;
+
+@Controller
+public class ProductController 
+{
+	
+	@Autowired
+	private ProductService service;
+	
+	@GetMapping("/")
+	public String index(Model model)
+	{
+		service.getProducts();
+		
+		return "index";
+	}
+
+}
